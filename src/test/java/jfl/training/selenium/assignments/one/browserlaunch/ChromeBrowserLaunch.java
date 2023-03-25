@@ -17,6 +17,7 @@ public class ChromeBrowserLaunch {
         chromeDriver.manage().window().maximize();
         System.out.println("Webpage title is: " + chromeDriver.getTitle());
         System.out.println("Current page's URL is: " + chromeDriver.getCurrentUrl());
+        chromeDriver.manage().window().minimize();
         chromeDriver.quit();
     }
 }
