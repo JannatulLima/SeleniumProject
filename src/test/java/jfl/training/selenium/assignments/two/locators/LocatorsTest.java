@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.concurrent.TimeUnit;
 
 public class LocatorsTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
@@ -64,7 +64,8 @@ public class LocatorsTest {
 
         WebElement checkoutFormFinishButton = chromeDriver.findElement(By.id("finish"));
         checkoutFormFinishButton.click();
-        chromeDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        Thread.sleep(3000);
         chromeDriver.quit();
 
     }
