@@ -34,6 +34,7 @@ public class BrowserNavigation {
         Thread.sleep(10000);
         chromeDriver.navigate().forward();
         Thread.sleep(10000);
+        chromeDriver.navigate().refresh();
         chromeDriver.quit();
     }
 }
