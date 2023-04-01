@@ -1,4 +1,4 @@
-package jfl.training.selenium.assignments.two.locators;
+package jfl.training.selenium.assignments.two;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.ous.jtoml.impl.ValuedToken;
@@ -13,9 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class LocatorsTest {
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver chromeDriver = new ChromeDriver(options);
+        WebDriver chromeDriver = new ChromeDriver();
         chromeDriver.get("https://www.saucedemo.com/");
         chromeDriver.manage().window().maximize();
         chromeDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
