@@ -1,4 +1,4 @@
-package jfl.training.selenium.assignments.three.dynamic.locators;
+package jfl.training.selenium.assignments.three;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -7,14 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class BrowserNavigation {
+public class DynamicLocators {
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver chromeDriver = new ChromeDriver(options);
+        WebDriver chromeDriver = new ChromeDriver();
         chromeDriver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         chromeDriver.manage().window().maximize();
         chromeDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -27,14 +26,6 @@ public class BrowserNavigation {
 
         WebElement loginButton = chromeDriver.findElement(By.cssSelector("button[class$='login-button']")); //tag[attributeS='value']
         loginButton.submit();
-
-        chromeDriver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
-        Thread.sleep(10000);
-        chromeDriver.navigate().back();
-        Thread.sleep(10000);
-        chromeDriver.navigate().forward();
-        Thread.sleep(10000);
-        chromeDriver.navigate().refresh();
         chromeDriver.quit();
     }
 }

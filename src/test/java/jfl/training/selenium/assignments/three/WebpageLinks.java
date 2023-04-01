@@ -1,4 +1,4 @@
-package jfl.training.selenium.assignments.three.dynamic.locators;
+package jfl.training.selenium.assignments.three;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -13,9 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class WebpageLinks {
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver chromeDriver = new ChromeDriver(options);
+        WebDriver chromeDriver = new ChromeDriver();
         chromeDriver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         chromeDriver.manage().window().maximize();
         chromeDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
