@@ -27,6 +27,8 @@ public class CookiesTest {
         for (Cookie cookie : cookieSet) {
             System.out.println(cookie.getName() + " " + cookie.isHttpOnly()); //print all cookies
         }
+        chromeDriver.manage().deleteAllCookies(); //delete all cookies
+        System.out.println(cookieSet.size()); //print total cookie count
         chromeDriver.quit();
     }
 }
