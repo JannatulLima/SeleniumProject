@@ -37,9 +37,10 @@ public class AlertTest {
         chromeDriver.findElement(By.id("prompt")).click();
         Thread.sleep(1000);
         Alert promAlert = chromeDriver.switchTo().alert();
-        promAlert.sendKeys("hello");
         Thread.sleep(2000);
+        promAlert.sendKeys("hello");
         promAlert.accept();
+        Thread.sleep(2000);
 
         chromeDriver.quit();
     }
