@@ -18,14 +18,14 @@ public class CookiesTest {
         chromeDriver.manage().window().maximize();
         chromeDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        chromeDriver.manage().addCookie(new Cookie("language", "English"));
-        chromeDriver.manage().addCookie(new Cookie("timezone", "UTC"));
-        System.out.println(chromeDriver.manage().getCookieNamed("language"));
-        chromeDriver.manage().deleteCookieNamed("language");
-        Set<Cookie> cookieSet = chromeDriver.manage().getCookies();
-        System.out.println(cookieSet.size());
+        chromeDriver.manage().addCookie(new Cookie("language", "English")); //add cookie
+        chromeDriver.manage().addCookie(new Cookie("timezone", "UTC")); //add cookie
+        System.out.println(chromeDriver.manage().getCookieNamed("language")); //get cookie by cookie name
+        chromeDriver.manage().deleteCookieNamed("language"); //delete cookie by cookie name
+        Set<Cookie> cookieSet = chromeDriver.manage().getCookies(); //get all cookies
+        System.out.println(cookieSet.size()); //print total cookie count
         for (Cookie cookie : cookieSet) {
-            System.out.println(cookie.getName() + " " + cookie.isHttpOnly());
+            System.out.println(cookie.getName() + " " + cookie.isHttpOnly()); //print all cookies
         }
         chromeDriver.quit();
     }

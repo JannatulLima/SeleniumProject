@@ -18,20 +18,20 @@ public class WindowsTest {
         chromeDriver.manage().window().maximize();
         chromeDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        String mainWindow = chromeDriver.getWindowHandle();
-        chromeDriver.switchTo().newWindow(WindowType.TAB);
-        chromeDriver.navigate().to("https://demoqa.com/sample");
-        System.out.println(chromeDriver.findElement(By.id("sampleHeading")).getText());
-        Set<String> windows = chromeDriver.getWindowHandles();
-        System.out.println(windows.size());
-        chromeDriver.close();
-        chromeDriver.switchTo().window(mainWindow);
+        String mainWindow = chromeDriver.getWindowHandle();  //main window
+        chromeDriver.switchTo().newWindow(WindowType.TAB);  //open tab type window
+        chromeDriver.navigate().to("https://demoqa.com/sample"); //navigate to provided URL after opening tab
+        System.out.println(chromeDriver.findElement(By.id("sampleHeading")).getText()); //print opened tab page's content
+        Set<String> windows = chromeDriver.getWindowHandles();  //get total windows after opening tab
+        System.out.println(windows.size()); //print total windows
+        chromeDriver.close(); //close opened tab
+        chromeDriver.switchTo().window(mainWindow); //switch to main window
 
-        chromeDriver.switchTo().newWindow(WindowType.WINDOW);
-        chromeDriver.navigate().to("https://demoqa.com/sample");
-        System.out.println(chromeDriver.findElement(By.id("sampleHeading")).getText());
-        chromeDriver.close();
-        chromeDriver.switchTo().window(mainWindow);
+        chromeDriver.switchTo().newWindow(WindowType.WINDOW); //open window type window
+        chromeDriver.navigate().to("https://demoqa.com/sample"); //navigate to provided URL after opening tab
+        System.out.println(chromeDriver.findElement(By.id("sampleHeading")).getText()); //print opened window page's content
+        chromeDriver.close(); //close opened window
+        chromeDriver.switchTo().window(mainWindow); //switch to main window
 
         chromeDriver.quit();
     }

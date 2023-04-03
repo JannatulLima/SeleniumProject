@@ -16,25 +16,25 @@ public class IFrameTest {
         chromeDriver.manage().window().maximize();
         chromeDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        System.out.println(chromeDriver.findElements(By.tagName("iframe")).size());
+        System.out.println(chromeDriver.findElements(By.tagName("iframe")).size()); //print total iframes
 
         WebElement mainPageContent = chromeDriver.findElement(By.id("framesWrapper"));
-        System.out.println(mainPageContent.getText());
+        System.out.println(mainPageContent.getText()); //print main page content
 
-        chromeDriver.switchTo().frame("frame1");
+        chromeDriver.switchTo().frame("frame1"); //switch to frame by frame id
         WebElement firstFrameContent = chromeDriver.findElement(By.id("sampleHeading"));
-        System.out.println(firstFrameContent.getText());
+        System.out.println(firstFrameContent.getText()); //print frame content
         chromeDriver.switchTo().defaultContent();
 
-        chromeDriver.switchTo().frame(3);
+        chromeDriver.switchTo().frame(3); //switch to frame by id
         WebElement SecondFrameContent = chromeDriver.findElement(By.id("sampleHeading"));
-        System.out.println(SecondFrameContent.getText());
+        System.out.println(SecondFrameContent.getText());  //print frame content
         chromeDriver.switchTo().defaultContent();
 
-        WebElement frameElement = chromeDriver.findElement(By.id("frame2"));
+        WebElement frameElement = chromeDriver.findElement(By.id("frame2")); //switch to frame by webElement
         chromeDriver.switchTo().frame(frameElement);
         WebElement RePrintSecondFrameContent = chromeDriver.findElement(By.id("sampleHeading"));
-        System.out.println(RePrintSecondFrameContent.getText());
+        System.out.println(RePrintSecondFrameContent.getText()); //print frame content
         chromeDriver.switchTo().defaultContent();
 
 
