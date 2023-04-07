@@ -1,4 +1,4 @@
-package jfl.training.selenium.assignments.four;
+package jfl.training.selenium.assignments.assignment4;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
