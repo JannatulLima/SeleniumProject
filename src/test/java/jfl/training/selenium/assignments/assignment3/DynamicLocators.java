@@ -1,13 +1,11 @@
-package jfl.training.selenium.assignments.three;
+package jfl.training.selenium.assignments.assignment3;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class DynamicLocators {

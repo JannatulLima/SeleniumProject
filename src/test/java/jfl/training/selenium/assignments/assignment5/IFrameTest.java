@@ -1,4 +1,4 @@
-package jfl.training.selenium.assignments.five;
+package jfl.training.selenium.assignments.assignment5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
