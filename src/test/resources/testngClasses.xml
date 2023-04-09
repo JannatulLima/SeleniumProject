@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="Before and After Class Test">
+<classes>
+    <class name="jfl.testng.assignments.assignment1.BeforeClassTest"></class>
+</classes>
+    </test>
+</suite>
