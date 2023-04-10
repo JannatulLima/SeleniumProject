@@ -2,7 +2,9 @@ package jfl.testng.assignments.assignment1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
 
 public class BeforeClassTest extends BaseBeforeClassTest {
     @Test(priority = 0)
@@ -15,6 +17,9 @@ public class BeforeClassTest extends BaseBeforeClassTest {
 
         WebElement loginButton = chromeDriver.findElement(By.id("login-button"));
         loginButton.click();
+
+        String productPageTitle = chromeDriver.findElement(By.cssSelector("#header_container > div.header_secondary_container > span")).getText().trim();
+        Assert.assertEquals(productPageTitle, "Products");
     }
 
     @Test(priority = 1)
@@ -45,5 +50,8 @@ public class BeforeClassTest extends BaseBeforeClassTest {
 
         WebElement checkoutFormFinishButton = chromeDriver.findElement(By.id("finish"));
         checkoutFormFinishButton.click();
+
+        String orderSuccessfulMessage = chromeDriver.findElement(By.className("complete-header")).getText().trim();
+        Assert.assertEquals(orderSuccessfulMessage, "Thank you for your order!");
     }
 }
