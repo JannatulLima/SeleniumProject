@@ -2,6 +2,7 @@ package jfl.testng.assignments.assignment1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BeforeMethodTest extends BaseBeforeMethodTest{
@@ -19,10 +20,9 @@ public class BeforeMethodTest extends BaseBeforeMethodTest{
         WebElement viewProductSauceLabsBikeLight = chromeDriver.findElement(By.partialLinkText("Bike Light")); //partial link text locator
         viewProductSauceLabsBikeLight.click();
 
-        String getProductImageSource = chromeDriver.findElement(By.tagName("img")).getAttribute("src"); //tag name locator
-        System.out.println("First Selected Product's image source is: " + getProductImageSource);
-
         WebElement backToProductList = chromeDriver.findElement(By.id("back-to-products"));
+        String backToProductTitle = backToProductList.getText().trim();
+        Assert.assertEquals(backToProductTitle, "Back to products");
         backToProductList.click();
     }
 
@@ -63,6 +63,9 @@ public class BeforeMethodTest extends BaseBeforeMethodTest{
 
         WebElement checkoutFormFinishButton = chromeDriver.findElement(By.id("finish"));
         checkoutFormFinishButton.click();
+
+        String orderSuccessfulMessage = chromeDriver.findElement(By.className("complete-header")).getText().trim();
+        Assert.assertEquals(orderSuccessfulMessage, "Thank you for your order!");
     }
 
 }
