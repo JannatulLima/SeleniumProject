@@ -26,7 +26,7 @@ public class IFrameTest {
         System.out.println(firstFrameContent.getText()); //print frame content
         chromeDriver.switchTo().defaultContent();
 
-        chromeDriver.switchTo().frame(3); //switch to frame by id
+        chromeDriver.switchTo().frame(3); //switch to frame by index
         WebElement SecondFrameContent = chromeDriver.findElement(By.id("sampleHeading"));
         System.out.println(SecondFrameContent.getText());  //print frame content
         chromeDriver.switchTo().defaultContent();
